@@ -1,0 +1,140 @@
+@font-face {
+  font-family: 'Geist-Regular';
+  src: url('../fonts/Geist-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Geist-Bold';
+  src: url('../fonts/Geist-Bold.ttf');
+}
+
+:root {
+  --primaryColor: #09090b;
+  --secondaryColor: #18181b;
+  --tertiaryColor: #fafafa;
+  --tertiaryColorAlt: #d4d4d8;
+}
+
+html {
+  font-family: 'Geist-Regular', sans-serif;
+  background: var(--primaryColor);
+}
+
+h1,
+input[type='submit'] {
+  font-family: 'Geist-Bold', sans-serif;
+}
+
+input[type='submit'] {
+  background-color: var(--tertiaryColor);
+  transition: background-color 0.5s ease;
+}
+
+input[type='submit']:hover {
+  background-color: var(--tertiaryColorAlt);
+}
+
+p,
+#ciudad,
+#pais {
+  font-family: 'Geist-Regular', sans-serif;
+}
+
+#ciudad {
+  background-color: var(--primaryColor);
+  border: 1px solid var(--secondaryColor);
+  color: var(--tertiaryColor);
+}
+
+#ciudad::placeholder {
+  color: var(--tertiaryColor);
+}
+
+#pais {
+  background-color: var(--primaryColor);
+  border: 1px solid var(--secondaryColor);
+  color: var(--tertiaryColor);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: 100px auto;
+}
+
+.double-bounce1,
+.double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--tertiaryColor);
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: sk-bounce 2s infinite ease-in-out;
+  animation: sk-bounce 2s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bounce {
+  0%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  h1#titulo {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  input[type='text'],
+  input[type='submit'] {
+    width: 90%;
+    margin-left: 1.5rem;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  #pais {
+    width: 90%;
+    margin-left: 1.5rem;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  #resultado p {
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+  }
+
+  .mt-5 {
+    margin-top: 1rem;
+  }
+
+  .p-3 {
+    padding: 0.75rem;
+  }
+}
