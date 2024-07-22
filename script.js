@@ -27,7 +27,7 @@ function showError(message) {
   const alert = document.querySelector('.error');
   if (!alert) {
     const alert = document.createElement('div');
-    alert.classList.add('px-4', 'py-3', 'max-w-md', 'mx-auto', 'mt-6', 'text-center', 'error');
+    alert.classList.add('px-4', 'py-3', 'mx-auto', 'mt-6', 'text-center', 'error');
     alert.innerHTML = `
     <strong class="font-bold">Error!</strong>
     <span class="block">${message}</span>
