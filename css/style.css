@@ -26,6 +26,7 @@ input[type='submit'] {
 }
 
 input[type='submit'] {
+  border-radius: 10px;
   background-color: var(--tertiaryColor);
   transition: background-color 0.5s ease;
 }
@@ -38,6 +39,7 @@ p,
 #ciudad,
 #pais {
   font-family: 'Geist-Regular', sans-serif;
+  border-radius: 10px;
 }
 
 #ciudad {
@@ -56,54 +58,48 @@ p,
   color: var(--tertiaryColor);
 }
 
+.error {
+  border: 1px solid #dc2626;
+  border-radius: 10px;
+  background-color: transparent;
+  color: #ef4444;
+}
+
+/* Spinner */
 .spinner {
   width: 40px;
   height: 40px;
-  position: relative;
   margin: 100px auto;
+  background-color: #333;
+
+  border-radius: 100%;
+  -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+  animation: sk-scaleout 1s infinite ease-in-out;
 }
 
-.double-bounce1,
-.double-bounce2 {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: var(--tertiaryColor);
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  left: 0;
-  -webkit-animation: sk-bounce 2s infinite ease-in-out;
-  animation: sk-bounce 2s infinite ease-in-out;
-}
-
-.double-bounce2 {
-  -webkit-animation-delay: -1s;
-  animation-delay: -1s;
-}
-
-@-webkit-keyframes sk-bounce {
-  0%,
-  100% {
+@-webkit-keyframes sk-scaleout {
+  0% {
     -webkit-transform: scale(0);
   }
-  50% {
+  100% {
     -webkit-transform: scale(1);
+    opacity: 0;
   }
 }
 
-@keyframes sk-bounce {
-  0%,
-  100% {
+@keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
     transform: scale(0);
-    -webkit-transform: scale(0);
   }
-  50% {
-    transform: scale(1);
+  100% {
     -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
   }
 }
 
+/* Smartphones */
 @media (max-width: 640px) {
   h1#titulo {
     font-size: 1.5rem;

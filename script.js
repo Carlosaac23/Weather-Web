@@ -15,7 +15,7 @@ function searchWeather(e) {
 
   if (city === '' || country === '') {
     // Hubo un error
-    showError('Ambos campos son obligatorios');
+    showError('Both fields are required');
     return;
   }
 
@@ -24,10 +24,10 @@ function searchWeather(e) {
 }
 
 function showError(message) {
-  const alert = document.querySelector('.bg-red-100');
+  const alert = document.querySelector('.error');
   if (!alert) {
     const alert = document.createElement('div');
-    alert.classList.add('bg-red-100', 'border-red-400', 'text-red-700', 'px-4', 'py-3', 'rounded', 'max-w-md', 'mx-auto', 'mt-6', 'text-center');
+    alert.classList.add('px-4', 'py-3', 'max-w-md', 'mx-auto', 'mt-6', 'text-center', 'error');
     alert.innerHTML = `
     <strong class="font-bold">Error!</strong>
     <span class="block">${message}</span>
@@ -52,14 +52,14 @@ function consultAPI(city, country) {
       .then(data => {
         cleanHTML(); // Limpia el HTML previo
         if (data.cod === '404') {
-          showError('Ciudad no encontrada');
+          showError('City not found');
           return;
         }
 
         // Imprime la respuesta en el HTML
         showWeather(data);
       });
-  }, 1000);
+  }, 1800);
 }
 
 function showWeather(data) {
@@ -111,9 +111,5 @@ function spinner() {
 
   const divSpinner = document.createElement('div');
   divSpinner.classList.add('spinner');
-  divSpinner.innerHTML = `
-    <div class="double-bounce1"></div>
-    <div class="double-bounce2"></div>
-    `;
   result.appendChild(divSpinner);
 }
