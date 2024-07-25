@@ -73,7 +73,7 @@ function showWeather(data) {
   const minTemperature = kelvinToCentigrade(temp_min);
 
   const nameCity = document.createElement('p');
-  nameCity.textContent = `Clima en ${name}`;
+  nameCity.textContent = `Climate in ${name}`;
   nameCity.classList.add('font-bold', 'text-2xl');
 
   const actual = document.createElement('p');
